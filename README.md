@@ -19,7 +19,7 @@ pkg install openjdk-21
 Create and Edit **Java File** Create a file called **crypto.java**:
 
 ```bash
-nano EncryptDecrypt.java
+nano crypto.java
 ```
 Paste the code above into this file, then save and exit the editor (in nano, press CTRL + X, then Y, and Enter).
 
