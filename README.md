@@ -245,5 +245,5 @@ That's all for those of you who read my explanation and thank you.
 
 ---
 
-LICENSE (MIT) 
-CODE BY (c)DimazRizky
+[MIT License]()
+Copyright (c) 2024 DimazRizky
