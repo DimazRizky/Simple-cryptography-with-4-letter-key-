@@ -245,5 +245,6 @@ That's all for those of you who read my explanation and thank you.
 
 ---
 
-[MIT License]()
+[MIT License](https://github.com/DimazRizky/Simple-cryptography-with-4-letter-key-in-TERMUX/blob/main/LICENSE)
+
 Copyright (c) 2024 DimazRizky
