@@ -7,9 +7,9 @@ This code is used to encrypt or can also decrypt plaintext using Java as the mai
 ---
 **How to running the Code in Termux?**
 
-follow these steps:
+First clone this project
 
-Install Java on Termux Open Termux and run the following commands to install OpenJDK v21 or latters:
+Open Termux and run the following commands to install OpenJDK v21 or latters:
 ```bash
 pkg update
 pkg install openjdk-21
