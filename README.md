@@ -9,7 +9,7 @@ This code is used to encrypt or can also decrypt plaintext using Java as the mai
 
 First clone this project
 
-Open Termux and run the following commands to install OpenJDK v21 or later:
+Open Termux and run the following commands to install OpenJDK v21 or latest:
 ```shell
 termux-setup-storage
 pkg upgrade
