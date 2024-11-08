@@ -1,4 +1,4 @@
-# WHAT IS THE FUNCTION OF THIS CODE?
+# WHAT IS THE PURPOSE OF THIS CODE?
 This code is used to encrypt or can also decrypt plaintext using Java as the main language.
 
 > ⚠️This code only runs on terminal/shell and does not display GUI!!
