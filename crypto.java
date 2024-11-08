@@ -1,26 +1,23 @@
-
-//import class Scanner dari java.util
+// import Scanner class from java.util
 import java.util.Scanner;
 
-
-
-public class crypto {
+public class encryptDecrypt{
     
-    // fungsi untuk membuat alfabet yang digeser 
+    // function to create a shifted alphabet based on the key
     public static String createShiftedAlphabet(String key) {
         String alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         
-        // menyusun shiftedAlphabet dimulai dari KEY
+        // start shiftedAlphabet with the key
         int keyLength = key.length();
         int startIndex = alphabet.indexOf(key.charAt(0));
         String shiftedAlphabet = key;
         
-        // tambah sisa huruf setelah KEY
+        // add remaining letters after the key
         for (int i = startIndex + keyLength; i < alphabet.length(); i++) {
             shiftedAlphabet += alphabet.charAt(i);
         }
         
-        //  tambah huruf sebelum KEY yang belum ada di shiftedAlphabet
+        // add letters before the key that aren't in shiftedAlphabet
         for (int i = 0; i < startIndex; i++) {
             shiftedAlphabet += alphabet.charAt(i);
         }
@@ -28,23 +25,21 @@ public class crypto {
         return shiftedAlphabet;
     }
 
-
-
-    // function encrypt
+    // function to encrypt
     public static String encrypt(String text, String shiftedAlphabet) {
         String alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-        text = text.toUpperCase(); // dijadikan uppercase biar enak diliat 
+        text = text.toUpperCase(); // convert to uppercase for consistency
         StringBuilder encryptedText = new StringBuilder();
 
-        // encrypt tiap karakter dalam teks
+        // encrypt each character in the text
         for (char c : text.toCharArray()) {
             if (Character.isLetter(c)) {
-                // mengambil posisi karakter di alfabet asli
+                // get the position of the character in the original alphabet
                 int index = alphabet.indexOf(c);
-                // Mengganti dengan char dari alfabet yang digeser
+                // replace with char from shifted alphabet
                 encryptedText.append(shiftedAlphabet.charAt(index));
             } else {
-                // Menambahkan spasi (karakter non-huruf)
+                // keep space (non-letter character)
                 encryptedText.append(c);
             }
         }
@@ -52,21 +47,21 @@ public class crypto {
         return encryptedText.toString();
     }
 
-    // funct decrypt
+    // function to decrypt
     public static String decrypt(String text, String shiftedAlphabet) {
         String alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         text = text.toUpperCase();
         StringBuilder decryptedText = new StringBuilder();
 
-        // Decrypt semua char dati input
+        // decrypt each character from the input
         for (char c : text.toCharArray()) {
             if (Character.isLetter(c)) {
-                // ambil posisi karakter yang telah digeser
+                // get the position of the shifted character
                 int index = shiftedAlphabet.indexOf(c);
-                // Mengganti ke alfabet asli
+                // replace with original alphabet character
                 decryptedText.append(alphabet.charAt(index));
             } else {
-                // nambah spasi lagi
+                // keep space
                 decryptedText.append(c);
             }
         }
@@ -74,42 +69,42 @@ public class crypto {
         return decryptedText.toString();
     }
     
-    
-    //interface 
+    // interface
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Pilih mode:");
-        System.out.println("1. Enkripsi");
-        System.out.println("2. Dekripsi");
-        System.out.print("Masukkan pilihan Anda (1 atau 2): ");
+        System.out.println("Choose mode:");
+        System.out.println("1. Encrypt");
+        System.out.println("2. Decrypt");
+        System.out.print("Enter your choice (1 or 2): ");
         int choice = scanner.nextInt();
         
-        scanner.nextLine();// clean buffer scanner
+        scanner.nextLine(); // clear scanner buffer
 
-        System.out.print("Masukkan teks: ");
+        System.out.print("Enter text: ");
         String text = scanner.nextLine();
 
-        System.out.print("Masukkan KEY (contoh: RSTU): ");
+        System.out.print("Enter KEY (e.g., RSTU): ");
         String key = scanner.nextLine().toUpperCase();
 
-        // membuat alfabet yang telah digeser menggunakan KEY
+        // create a shifted alphabet using the KEY
         String shiftedAlphabet = createShiftedAlphabet(key);
-        System.out.println("Alfabet yang telah digeser: " + shiftedAlphabet);
+        System.out.println("Shifted Alphabet: " + shiftedAlphabet);
 
         // select mode
         if (choice == 1) {
             // Encrypt
             String encryptedText = encrypt(text, shiftedAlphabet);
-            System.out.println("Hasil Enkripsi: " + encryptedText);
+            System.out.println("Encrypted Result: " + encryptedText);
         } else if (choice == 2) {
             // Decrypt
             String decryptedText = decrypt(text, shiftedAlphabet);
-            System.out.println("Hasil Dekripsi: " + decryptedText);
+            System.out.println("Decrypted Result: " + decryptedText);
         } else {
-            System.out.println("Pilihan tidak valid. Program berakhir.");
+            System.out.println("Invalid choice. Program ends.");
         }
-        //nutup scanner
+
+        // close scanner
         scanner.close();
     }
 }
