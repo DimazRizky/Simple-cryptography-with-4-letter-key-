@@ -10,28 +10,18 @@ This code is used to encrypt or can also decrypt plaintext using Java as the mai
 First clone this project
 
 Open Termux and run the following commands to install OpenJDK v21 or later:
-```bash
-pkg update
+```shell
+termux-setup-storage
+pkg upgrade
+pkg update 
 pkg install openjdk-21
 ```
-
-
-Create and Edit **Java File** Create a file called **crypto.java**:
-
-```bash
-nano crypto.java
-```
-Paste the code above into this file, then save and exit the editor (in nano, press CTRL + X, then Y, and Enter).
-
 
 Compile Java Code Run the following command to compile the Java file:
 ```bash
 javac crypto.java
 ```
-If there are no errors, this will create a file named 
-```bash
-crypto.class
-```
+> If there are no errors, this will create a file named **crypto.class**
 
 
 **Run the Program**:
@@ -50,21 +40,20 @@ java crypto.java
 I will explain in detail the meaning of the code I wrote to make it easier for you to read this code.
 
 --
-First you can import the library 
+First, import the scanner library
 
 **Scanner Library**
-<br>
 ```java
 import java.util.Scanner;
 ```
-This line imports the Scanner class from java.util, allowing us to read user input from the console.
+> Imports the Scanner class from **java.util**
 
 **Main Class Declaration**
 
 ```java
 public class crypto {
 ```
-This declares a class named EncryptDecrypt. Inside this class, we define all methods needed for encryption, decryption, and creating the shifted alphabet.
+This declares a class named crypto. Inside this class, we define all methods needed for encryption, decryption, and creating the **shifted alphabet**.
 
 **createShiftedAlphabet Function**
 ```java
