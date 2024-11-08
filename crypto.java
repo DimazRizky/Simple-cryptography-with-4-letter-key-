@@ -1,7 +1,7 @@
 // import Scanner class from java.util
 import java.util.Scanner;
 
-public class encryptDecrypt{
+public class crypto{
     
     // function to create a shifted alphabet based on the key
     public static String createShiftedAlphabet(String key) {
